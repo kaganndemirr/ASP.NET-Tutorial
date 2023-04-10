@@ -1,0 +1,39 @@
+﻿@model EntityLayer.Concrete.Writer
+
+@{
+    Layout = null;
+}
+
+
+<h1> Yeni Yazar Ekleme Sayfası</h1>
+
+@using (Html.BeginForm("AddWriter", "Writer", FormMethod.Post))
+{
+    <div class="" form-group">
+        @Html.Label("Yazar Adı")
+        @Html.TextAreaFor(x => x.WriterName)
+        @Html.ValidationMessageFor(x => x.WriterName)
+        <br /><br />
+        @Html.Label("Yazar Soyadı")
+        @Html.TextAreaFor(x => x.WriterLastName)
+        @Html.ValidationMessageFor(x => x.WriterLastName)
+        <br /><br />
+        @Html.Label("Mail")
+        @Html.TextAreaFor(x => x.WriterMail)
+        @Html.ValidationMessageFor(x => x.WriterMail)
+        <br /><br />
+        @Html.Label("Resim")
+        @Html.TextAreaFor(x => x.WriterImage)
+        @Html.ValidationMessageFor(x => x.WriterImage)
+        <br /><br />
+        @Html.Label("Şifre")
+        @Html.TextAreaFor(x => x.WriterPassword)
+        @Html.ValidationMessageFor(x => x.WriterPassword)
+        <br /><br />
+        @Html.Label("Hakkında")
+        @Html.TextAreaFor(x => x.WriterAbout)
+        @Html.ValidationMessageFor(x => x.WriterAbout)
+        <br /><br />
+        <button>Kaydet</button>
+    </div>
+}

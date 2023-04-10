@@ -25,5 +25,7 @@ namespace EntityLayer.Concrete
         public ICollection<Heading> Headings { get; set; }
 
         public ICollection<Content> Contents { get; set; }
+
+        public string WriterAbout { get; set; }
     }
 }

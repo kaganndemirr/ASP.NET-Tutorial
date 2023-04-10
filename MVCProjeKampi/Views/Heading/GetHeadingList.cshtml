@@ -1,0 +1,35 @@
+﻿@using EntityLayer.Concrete
+@model List<Heading>
+
+
+@{
+    Layout = null;
+}
+
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+
+<table class="table table-bordered">
+    <tr>
+        <th>Id</th>
+        <th>Başlık</th>
+        <th>Kategori</th>
+        <th>Yazar</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td> @item.HeadingId</td>
+            <td> @item.HeadingName</td>
+            <td> @item.Category.CategoryName</td>
+            <td> @item.Writer.WriterName</td>
+            <td><a href="/Heading/DeleteHeading/@item.HeadingId" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Heading/UpdateHeading/@item.HeadingId" class="btn btn-danger">Güncelle</a></td>
+        </tr>
+
+    }
+</table>
+
+<td><a href="/Heading/AddHeading/" class="btn btn-danger">Ekle</a></td>
+
+
+

@@ -1,0 +1,24 @@
+﻿@model EntityLayer.Concrete.Heading
+
+@{
+    Layout = null;
+}
+
+
+<h1> Yeni Başlık Ekleme Sayfası</h1>
+
+@using (Html.BeginForm("AddHeading", "Heading", FormMethod.Post))
+{
+    <div class="" form-group">
+        @Html.Label("Başlık")
+        @Html.TextAreaFor(x => x.HeadingName)
+        <br /><br />
+        @Html.Label("Kategori")
+        @Html.TextAreaFor(x => x.CategoryId)
+        <br /><br />
+        @Html.Label("Yazar")
+        @Html.TextAreaFor(x => x.WriterId)
+        <br /><br />
+        <button>Kaydet</button>
+    </div>
+}

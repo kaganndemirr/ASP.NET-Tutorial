@@ -1,0 +1,38 @@
+﻿@using EntityLayer.Concrete
+@model List<Writer>
+
+
+@{
+    Layout = null;
+}
+
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+
+<table class="table table-bordered">
+    <tr>
+        <th>Id</th>
+        <th>Adı</th>
+        <th>Soyadı</th>
+        <th>Mail</th>
+        <th>Resim</th>
+        <th>Şifre</th>
+        <th>Hakkında</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td> @item.WriterId</td>
+            <td> @item.WriterName</td>
+            <td> @item.WriterLastName</td>
+            <td> @item.WriterMail</td>
+            <td> @item.WriterImage</td>
+            <td> @item.WriterPassword</td>
+            <td> @item.WriterAbout</td>
+            <td><a href="/Writer/DeleteWriter/@item.WriterId" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Writer/UpdateWriter/@item.WriterId" class="btn btn-danger">Güncelle</a></td>
+        </tr>
+
+    }
+</table>
+
+<td><a href="/Writer/AddWriter/" class="btn btn-danger">Ekle</a></td>
