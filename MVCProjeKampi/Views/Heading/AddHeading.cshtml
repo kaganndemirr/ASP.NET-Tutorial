@@ -14,10 +14,10 @@
         @Html.TextAreaFor(x => x.HeadingName)
         <br /><br />
         @Html.Label("Kategori")
-        @Html.TextAreaFor(x => x.CategoryId)
+        @Html.DropDownListFor(x => x.CategoryId, (List<SelectListItem>)ViewBag.vlc)
         <br /><br />
         @Html.Label("Yazar")
-        @Html.TextAreaFor(x => x.WriterId)
+        @Html.DropDownListFor(x => x.WriterId, (List<SelectListItem>)ViewBag.vlw)
         <br /><br />
         <button>Kaydet</button>
     </div>

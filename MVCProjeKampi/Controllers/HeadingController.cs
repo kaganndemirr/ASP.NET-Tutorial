@@ -14,11 +14,13 @@ namespace MVCProjeKampi.Controllers
     {
         readonly HeadingManager _hm;
         readonly CategoryManager _cm;
+        readonly WriterManager _wm;
 
         public HeadingController()
         {
             _hm = new HeadingManager(new EFHeadingDAL());
             _cm = new CategoryManager(new EFCategoryDAL());
+            _wm = new WriterManager(new EFWriterDAL());
         }
 
         // GET: Heading
@@ -43,6 +45,14 @@ namespace MVCProjeKampi.Controllers
                                                     Value = x.CategoryId.ToString()
                                                   }).ToList();
             ViewBag.vlc = valueCategory;
+
+            List<SelectListItem> valueWriter = (from x in _wm.GetWriters()
+                                                  select new SelectListItem
+                                                  {
+                                                      Text = x.WriterName,
+                                                      Value = x.WriterId.ToString()
+                                                  }).ToList();
+            ViewBag.vlw = valueWriter;
             return View();
         }
 
